@@ -1,3 +1,14 @@
+# How do we run this project?
+1. Open terminal and install dependencies with `yarn install`
+2. After installing, we can run `yarn start` to run this project locally.
+   
+# How do we test this project?
+1. Open terminal and install dependencies with `yarn install`
+2. After installing, we can simply run `yarn test` to see the test result.
+
+# How do we access this project via a public URL?
+- Just access this URL: `https://coding-challenges.vercel.app/`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
