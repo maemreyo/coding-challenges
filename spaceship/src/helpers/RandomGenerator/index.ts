@@ -1,3 +1,4 @@
+import { ValidationError } from '../ErrorHandler/ValidationError';
 import { Army, SpaceShip } from './../../models/spaceship.d';
 
 
@@ -16,6 +17,7 @@ export class RandomGenerator {
 
         // Override those above default values if they're provided
         if (externalList) this.externalList = externalList;
+
         if (disabledShuffle) this.disabledShuffle = disabledShuffle;
 
         this.init = function () {
@@ -35,13 +37,13 @@ export class RandomGenerator {
      */
     public choiceWithFixedSum = (sum: number, quantity: number): Army[] => {
         // Validate input value
-        if (sum === 0 || quantity === 0) throw Error("Please fill out the input!");
+        if (sum === 0 || quantity === 0) throw new ValidationError("Missing input");
 
-        if (quantity > this.externalList.length) throw Error("The list spaceship and quantity not match!");
+        if (quantity > this.externalList.length) throw new ValidationError("Input Not Match");
 
         // Base case
         if (quantity === 1) {
-            return [this.map(sum, this.externalList.pop())]
+            return [this.map(sum, this.externalList.shift())]
         }
 
         // Pick a random number
@@ -49,7 +51,7 @@ export class RandomGenerator {
 
         // Recursive case
         return [
-            this.map(_randomInteger, this.externalList.pop()),
+            this.map(_randomInteger, this.externalList.shift()),
             ...this.choiceWithFixedSum(sum - _randomInteger, quantity - 1)
         ]
     }

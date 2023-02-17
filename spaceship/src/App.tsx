@@ -2,8 +2,8 @@ import React from "react";
 import { SpaceShips } from "./components/SpaceShips";
 import { RandomGenerator } from "./helpers/RandomGenerator";
 import { getSpaceshipModels } from "./mocks/spaceships";
-import "./App.css";
 import { Army } from "./models/spaceship";
+import "./App.css";
 
 function App() {
     const teamRef = React.useRef<HTMLInputElement>(null);
