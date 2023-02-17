@@ -11,6 +11,7 @@ const ranged = [800, 1000, 1200, 1500];
 const canBoost = [true, false];
 
 // Helpers
+
 /**
  * This function will help to pick a value in the mock array
  * @param index Index of spaceship
@@ -37,7 +38,7 @@ const mapper = (index: number): SpaceShip => {
     }
 }
 /**
- * Generate a mock list of modeled spaceship
+ * Help to generate a mock list of modeled spaceship
  * @param quantity Number of needed mock spaceship
  * @returns A list of modeled spaceship
  */

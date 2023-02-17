@@ -56,10 +56,10 @@ export class RandomGenerator {
         ]
     }
 
-    /** Get a random integer
+    /** Help to get a random integer in the range of min and max
     * @param max The maximum value
     * @param min The minimum value
-    * @returns The random integer in the range
+    * @returns The random integer in the range of min and max
     */
     public randomInteger = (max: number, min: number): number => {
         const _min = Math.ceil(min);
@@ -68,10 +68,10 @@ export class RandomGenerator {
     }
 
     /**
-     * Map function to get the exact output data
+     * Help to map the exact output
      * @param quantity The spaceship quantity
-     * @param item The spaceship
-     * @returns A mapped data included @param quantity and @param item
+     * @param spaceship The spaceship
+     * @returns A mapped data included @param quantity and @param spaceship
      */
     private map = (quantity: number, spaceship?: SpaceShip): Army => ({
         quantity,
@@ -79,8 +79,8 @@ export class RandomGenerator {
     })
 
     /**
-     * Shuffle the external list
+     * Help to shuffle the external list
      * @returns Shuffled list
      */
-    public shuffle = (): any[] => this.externalList.sort(() => 0.5 - Math.random());
+    public shuffle = (): SpaceShip[] => this.externalList.sort(() => 0.5 - Math.random());
 }

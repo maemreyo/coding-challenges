@@ -1,3 +1,6 @@
+/**
+ * This function will help to compare two array of objects.
+ */
 let compareTwoArrayOfObjects = (
     firstArrObjs: any[],
     secondArrObjs: any[]
