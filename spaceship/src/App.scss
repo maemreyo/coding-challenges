@@ -1,0 +1,35 @@
+.App {
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 100px;
+    }
+
+    .spaceship-area,
+    .team-area {
+        display: flex;
+        margin: 50px auto;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        min-width: 400px;
+
+        label {
+            font-style: italic;
+            display: block;
+            min-width: 370px;
+        }
+
+        input {
+            font-size: 1.2rem;
+            border: 1px solid gray;
+        }
+    }
+
+    .submit {
+        display: block;
+        margin: auto;
+        padding: 20px 50px;
+        font-size: 24px;
+    }
+}

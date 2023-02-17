@@ -1,4 +1,5 @@
 import { Army } from "../../models/spaceship";
+import './spaceship.scss';
 
 interface IProps {
     data: Army[];
@@ -6,9 +7,9 @@ interface IProps {
 
 export const SpaceShips: React.FC<IProps> = ({ data }) => {
     return (
-        <div>
+        <div className="spaceship">
             {data.map((item, index) => (
-                <div key={`${index}`}>
+                <div className="spaceship-item" key={`${index}`}>
                     <br />
                     <h2>Team {item.spaceship?.name}</h2>
                     <p>

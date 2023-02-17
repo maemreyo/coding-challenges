@@ -1,0 +1,9 @@
+.spaceship {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .spaceship-item {
+        min-width: 300px;
+    }
+}

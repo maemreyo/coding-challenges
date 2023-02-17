@@ -3,7 +3,7 @@ import { SpaceShips } from "./components/SpaceShips";
 import { RandomGenerator } from "./helpers/RandomGenerator";
 import { getSpaceshipModels } from "./mocks/spaceships";
 import { Army } from "./models/spaceship";
-import "./App.css";
+import "./App.scss";
 
 function App() {
     const teamRef = React.useRef<HTMLInputElement>(null);
@@ -14,7 +14,7 @@ function App() {
         if (teamRef.current && spaceshipsRef.current) {
             const teamNum = parseInt(teamRef.current.value) | 0;
             const spaceshipNum = parseInt(spaceshipsRef.current.value) | 0;
-            
+
             const randomness = new RandomGenerator(getSpaceshipModels(teamNum));
             const teams = randomness.choiceWithFixedSum(spaceshipNum, teamNum);
 
@@ -24,14 +24,16 @@ function App() {
 
     return (
         <div className="App">
-            <h2>Build your own army</h2>
-            Spaceship?{" "}
-            <input ref={spaceshipsRef} type="number" defaultValue={167} />
-            <br />
-            Number of teams?{" "}
-            <input ref={teamRef} type="number" defaultValue={4} />
-            <br />
-            <button onClick={buildTeams}>Build</button>
+            <h2 className="title">Build your own army</h2>
+            <div className="spaceship-area">
+                <label>What's the number of spaceships: </label>
+                <input ref={spaceshipsRef} type="number" defaultValue={100} />
+            </div>
+            <div className="team-area">
+                <label>How many team do you want to create: </label>
+                <input ref={teamRef} type="number" defaultValue={4} />
+            </div>
+            <button className="submit" onClick={buildTeams}>Build</button>
             <SpaceShips data={spaceships} />
         </div>
     );
